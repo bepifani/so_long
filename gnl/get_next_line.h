@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:39:33 by bepifani          #+#    #+#             */
-/*   Updated: 2021/12/06 13:51:16 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:43:45 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoinn(char *s1, char *s2);
 char	*ft_end_str_from_buff(char *str);
 char	*ft_one_str_to_n(char *str);
 char	*ft_readfile(int fd, char *str);

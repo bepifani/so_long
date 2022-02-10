@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:38:47 by bepifani          #+#    #+#             */
-/*   Updated: 2021/12/06 13:50:46 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:43:33 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ char	*ft_readfile(int fd, char *str)
 			return (str);
 		}
 		buff[simvol] = '\0';
-		str = ft_strjoin(str, buff);
+		str = ft_strjoinn(str, buff);
 	}
 	ft_freestr(buff);
 	return (str);

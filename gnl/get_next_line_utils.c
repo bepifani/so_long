@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:39:08 by bepifani          #+#    #+#             */
-/*   Updated: 2021/10/24 14:14:40 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:42:57 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoinn(char *s1, char *s2)
 {
 	char	*str;
 	int		i;
