@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:21:38 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/10 17:40:09 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/10 18:06:03 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,30 @@ int ft_find_length(char *argv)
     return (i);
 }
 
-void    ft_find_positions(char *argv)
+void    ft_find_positions(t_sl  solong)
 {
-    int file;
+    int i;
+    int j;
 
-    file = open(argv, O_RDONLY);
-    if (file < 0)
-        write (1, "Error, wrong file\n", 18);
-    close(file);
+    i = 0;
+    j = 0;
+    solong.mony = 0;
+    while(i < solong.hight)
+    {
+        j = 0;
+        while (j < solong.length)
+        {
+            if (solong.map[i][j] == 'P')
+            {
+                solong.x = i;
+                solong.y = j;
+            }
+            else if (solong.map[i][j] == 'C')
+              solong.mony++;  
+            j++;
+        }
+        i++;
+    }
 }
 
 void    ft_make_map(t_sl *solong, char *argv)
@@ -86,5 +102,5 @@ void    ft_make_map(t_sl *solong, char *argv)
         i++;
     }
     close (file);
-    ft_find_positions(argv);
+    ft_find_positions(*solong);
 }
