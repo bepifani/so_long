@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:31:57 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/10 18:04:52 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:13:23 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ typedef struct s_sl {
     int     find_mony;
 }   t_sl;
 
-int     ft_find_hight(char *argv);
+int     ft_find_hight(char *argv, t_sl  *solong);
 int     ft_find_length(char *argv);
 void    ft_make_map(t_sl *solong, char *argv);
-void    ft_find_positions(t_sl  solong);
+void    ft_find_positions(t_sl  *solong);
 
 #endif

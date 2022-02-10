@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:38:47 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/10 17:43:33 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:14:15 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_end_str_from_buff(char *str)
 		ft_freestr(str);
 		return (NULL);
 	}
-	s = ft_calloc(sizeof(char), (ft_strlen(str) - a + 1));
+	s = ft_calloc((ft_strlen(str) - a + 1), sizeof(char));
 	if (!s)
 		return (NULL);
 	while (str[a] != '\0')
@@ -62,7 +62,7 @@ char	*ft_one_str_to_n(char *str)
 		return (NULL);
 	while (str[a] != '\n' && str[a] != '\0')
 		a++;
-	s = ft_calloc(sizeof(char), (a + 2));
+	s = ft_calloc((a + 2), sizeof(char));
 	if (!s)
 		return (NULL);
 	while (str[b] != '\n' && str[b] != '\0')
@@ -122,6 +122,10 @@ char	*get_next_line(int fd)
 		return (NULL);
 	buf1 = ft_one_str_to_n(buf2);
 	buf2 = ft_end_str_from_buff(buf2);
+	// if (buf1)
+	// 	write(1, buf1, ft_strlen(buf1));
+	// write(1, "\n", 1);
+	// write(1, "\n", 1);
 	return (buf1);
 }
 

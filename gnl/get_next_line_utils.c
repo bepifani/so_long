@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:39:08 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/10 17:42:57 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/10 19:04:40 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ char	*ft_strjoinn(char *s1, char *s2)
 	j = 0;
 	if (!s1)
 	{
-		s1 = (char *)malloc(sizeof(char) * 1);
+		s1 = (char *)ft_calloc(1, sizeof(char));
 		s1[j] = '\0';
 	}
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	str = (char *)ft_calloc((ft_strlen(s1) + ft_strlen(s2) + 1), sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	while (s1[++i] != '\0')
