@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:55:52 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/11 18:21:02 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/11 18:41:22 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int main(int argc, char **argv)
 	printf("mony=%d, x=%d, y=%d\n", solong.mony, solong.x, solong.y);
 	solong.length = (int)(ft_strlen(solong.map[1]));
 	solong.mlx = mlx_init();
-	solong.win = mlx_new_window(solong.mlx, (solong.length - 1) * 32, solong.hight * 32, "qqqqqqq");
+	solong.win = mlx_new_window(solong.mlx, (solong.length - 1) * 32, solong.hight * 32, "SO LONG");
 	// void *q;
 	// mlx_hook(solong.win, 2, 1L << 0, q, solong);
 	ft_fill_map(&solong);
