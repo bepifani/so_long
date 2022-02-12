@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 14:27:28 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/12 19:26:40 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/12 19:36:42 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ void	ft_player_move(t_sl *sl, int i, int j)
 	else if (sl->map[i + sl->x][j + sl->y] == 'E')
 	{
 		if (sl->mony == sl->find_mony)
+		{
 			sl->win_game = 1;
+			ft_end(sl);
+		}
 		else
 			return ;
 	}
@@ -42,11 +45,8 @@ void	ft_player_move(t_sl *sl, int i, int j)
 		sl->map[i + sl->x][j + sl->y] = 'P';
 		sl->map[sl->x][sl->y] = '0';
 	}
-	//ft_image_to_map(sl, sl->x * 32, sl->y * 32, GRASS);
-	//ft_steps(sl, sl->steps);
 	sl->x = sl->x + i;
 	sl->y = sl->y + j;
-	//ft_image_to_map(sl, sl->x * 32, sl->y * 32, PIG);
 }
 
 int	ft_end(t_sl *sl)
@@ -54,9 +54,9 @@ int	ft_end(t_sl *sl)
 	int i = 0;
 
 	if (sl->lose == 1)
-		printf("game over\n");
+		printf("============= Game over;( =============\n");
 	if (sl->win_game == 1)
-		printf("you win\n");
+		printf("============= You win! =============\n");
 	while (i < sl->hight)
 	{
 		free(sl->map[i]);
@@ -70,10 +70,8 @@ int	ft_end(t_sl *sl)
 
 int	ft_key(int key, t_sl *sl)
 {
-	// if (sl->win || sl->lose)
-	// 	ft_end(sl);
-	//printf ("key=%d\n", key);
-	//ft_putnbr_fd(key, 1);
+	if (sl->win_game == 1 || sl->lose == 1)
+		ft_end(sl);
 	if (key == A)
 		ft_player_move(sl, 0, -1);
 	if (key == D)
