@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:38:47 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/10 19:14:15 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/12 19:21:40 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,15 +128,3 @@ char	*get_next_line(int fd)
 	// write(1, "\n", 1);
 	return (buf1);
 }
-
-// int	main(void)
-// {
-// 	char	*line;
-// 	int		fd;
-
-// 	fd = open("test.txt", O_RDONLY);
-// 	while ((line = get_next_line(fd)))
-// 	{
-// 		printf("%s", line);
-// 	}
-// }

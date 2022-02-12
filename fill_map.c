@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:17:14 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/11 18:38:07 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/12 19:22:53 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_image_to_map(t_sl *solong, int x, int y, char *name)
 	mlx_put_image_to_window(solong->mlx, solong->win, image, x * 32, y * 32);
 }
 
-void	ft_fill_map(t_sl *solong)
+int	ft_fill_map(t_sl *solong)
 {
 	int i;
 	size_t j;
@@ -38,7 +38,7 @@ void	ft_fill_map(t_sl *solong)
 			else
 				ft_image_to_map(solong, j, i, GRASS);
 			if (solong->map[i][j] == 'P')
-				ft_image_to_map(solong, j, i, PIG);
+				ft_image_to_map(solong, solong->y, solong->x, PIG);
 			else if (solong->map[i][j] == 'W')
 				ft_image_to_map(solong, j, i, WOLF);
 			else if (solong->map[i][j] == 'C')
@@ -49,4 +49,5 @@ void	ft_fill_map(t_sl *solong)
 		}
 		i++;
 	}
+	return (0);
 }

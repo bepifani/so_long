@@ -6,7 +6,7 @@
 #    By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 17:26:19 by bepifani          #+#    #+#              #
-#    Updated: 2022/02/11 17:33:56 by bepifani         ###   ########.fr        #
+#    Updated: 2022/02/12 19:22:40 by bepifani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ MLX = mlx/libmlx.a
 FLAGS = gcc -Wall -Wextra -Werror
 MLXFLAGS = -framework OpenGL -framework AppKit
 
-FILES = map_reader.c	so_long.c	./gnl/get_next_line.c	./gnl/get_next_line_utils.c	fill_map.c
+FILES = map_reader.c	so_long.c	./gnl/get_next_line.c	./gnl/get_next_line_utils.c	fill_map.c	play.c
 
 OBJ = $(FILES: .c=.o)
 
@@ -47,6 +47,6 @@ fclean: clean
 	$(RM) $(LIBFT)
 	$(RM) $(MLX)
 
-re: fclean all
+# re: fclean all
 
 .PHONY: all clean fclean re bonus
