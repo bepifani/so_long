@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:31:57 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/12 19:32:03 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/13 15:48:22 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,9 @@ int		ft_key(int key, t_sl *sl);
 void	ft_get_mony(t_sl *sl, int i, int j);
 void	ft_player_move(t_sl *sl, int i, int j);
 int		ft_end(t_sl *sl);
+
+int		ft_check_map(t_sl *sl);
+int	ft_check_p_e(t_sl *sl);
+int ft_check_walls(t_sl * sl);
 
 #endif

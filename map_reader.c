@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:21:38 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/12 19:21:31 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/13 16:04:33 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,103 @@ void    ft_find_positions(t_sl  *solong)
     }
 }
 
+int	ft_check_p_e(t_sl *sl)
+{
+	int p = 0;
+	int e = 0;
+	int i =0;
+	size_t j;
+	int c= 0;
+
+	while(i < sl->hight)
+	{
+		j = 0;
+		while (j < ft_strlen(sl->map[i]))
+		{
+			if (sl->map[i][j] == 'P')
+				p++;
+			if (sl->map[i][j] == 'E')
+				e++;
+			if (sl->map[i][j] == 'C')
+				c++;
+			j++;
+		}
+		i++;
+	}
+	if (p != 1 || e != 1 || c == 0)
+		return (0);
+	return (1);
+}
+
+int ft_check_walls(t_sl * sl)
+{
+	int i = 0;
+	size_t j = 0;
+
+	while (j < ft_strlen(sl->map[i]) - 1)
+	{
+		if (sl->map[i][j] != '1')
+			return (0);
+		j++;
+	}
+	i = sl->hight - 1;
+	j = 0;
+	while (j < ft_strlen(sl->map[i]) - 1)
+	{
+		if (sl->map[i][j] != '1')
+			return (0);
+		j++;
+	}
+	j = 0;
+	i = 0;
+	while (i < sl->hight - 1)
+	{
+		if (sl->map[i][j] != '1')
+			return (0);
+		i++;
+	}
+	i = 0;
+	j = ft_strlen(sl->map[i]) - 2;
+	while (i < sl->hight - 1)
+	{
+		if (sl->map[i][j] != '1')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	ft_check_map(t_sl *sl)
+{
+	int i = 0;
+	size_t j;
+
+	while(i < sl->hight)
+	{
+		j = 0;
+		while (j < ft_strlen(sl->map[i]))
+		{
+			if (sl->map[i][j] != 'P' && sl->map[i][j] != '0' && sl->map[i][j] != '1' && sl->map[i][j] != 'W'
+				&& sl->map[i][j] != 'C' && sl->map[i][j] != 'E' && sl->map[i][j] != '\n')
+				return (0);
+			if (ft_strlen(sl->map[sl->hight - 1]) + 1 != ft_strlen(sl->map[0]))
+			 	return (0);
+			if (ft_strlen(sl->map[0]) != ft_strlen(sl->map[i]) && i != sl->hight - 1)
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	if (ft_check_p_e(sl) == 0 || ft_check_walls(sl) == 0)
+		return (0);
+	return (1);
+}
+
 void    ft_make_map(t_sl *solong, char *argv)
 {
     int file;
     int i;
 
-    //if (ft_strlen(argv))
-    //ft_check_map(argv); // проверка карты на валидность
     i = 0;
     solong->hight = ft_find_hight(argv);
     solong->map = malloc((solong->hight + 1) * sizeof(char *));

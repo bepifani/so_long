@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 14:27:28 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/12 19:36:42 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/13 16:02:48 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ int	ft_end(t_sl *sl)
 	int i = 0;
 
 	if (sl->lose == 1)
-		printf("============= Game over;( =============\n");
+		write(1, "============= Game over;( =============\n", 41);
 	if (sl->win_game == 1)
-		printf("============= You win! =============\n");
+		write(1, "============= You win! =============\n", 37);
 	while (i < sl->hight)
 	{
 		free(sl->map[i]);

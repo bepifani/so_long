@@ -6,7 +6,7 @@
 #    By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 17:26:19 by bepifani          #+#    #+#              #
-#    Updated: 2022/02/12 19:22:40 by bepifani         ###   ########.fr        #
+#    Updated: 2022/02/12 19:53:17 by bepifani         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,7 @@ clean:
 	$(MAKE) clean -C libft
 	$(MAKE) clean -C mlx
 
-fclean: clean
-	$(RM) $(NAME)
-	$(RM) $(LIBFT)
-	$(RM) $(MLX)
+#fclean: clean
 
 # re: fclean all
 

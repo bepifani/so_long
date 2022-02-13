@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:55:52 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/12 19:35:44 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/13 15:58:47 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ int main(int argc, char **argv)
     }
     else
         write (1, "Error\n", 6);
+	if (ft_check_map(&solong) == 0)
+	{
+		write (1, "Error, not valid map\n", 21);
+		return (0);
+	}
 	solong.length = (int)(ft_strlen(solong.map[1]));
 	solong.mlx = mlx_init();
 	solong.win = mlx_new_window(solong.mlx, (solong.length - 1) * 32, solong.hight * 32, "SO LONG");
