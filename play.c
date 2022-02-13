@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 14:27:28 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/13 16:02:48 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/13 18:31:29 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,12 @@ int	ft_end(t_sl *sl)
 	while (i < sl->hight)
 	{
 		free(sl->map[i]);
+		sl->map[i] = NULL;
 		i++;
 	}
-	free(sl->map);
-	free(sl->mlx);
-	free(sl->win);
+	// free(sl->map);
+	// free(sl->mlx);
+	// free(sl->win);
 	exit (EXIT_SUCCESS);
 }
 

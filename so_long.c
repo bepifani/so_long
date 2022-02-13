@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:55:52 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/13 15:58:47 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/13 18:28:34 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void    ft_init(t_sl *sl)
     sl->map = NULL;
 	sl->mlx = NULL;
 	sl->win = NULL;
+	sl->image = NULL;
 }
 
 int main(int argc, char **argv)
@@ -35,6 +36,7 @@ int main(int argc, char **argv)
 	if (ft_check_map(&solong) == 0)
 	{
 		write (1, "Error, not valid map\n", 21);
+		ft_end(&solong);
 		return (0);
 	}
 	solong.length = (int)(ft_strlen(solong.map[1]));

@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 17:17:14 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/12 19:22:53 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/13 18:31:05 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ void	ft_image_to_map(t_sl *solong, int x, int y, char *name)
 {
 	int	i = 0;
 	int	j = 0;
-	void	*image;
 
-	image = mlx_xpm_file_to_image(solong->mlx, name, &i, &j);
-	mlx_put_image_to_window(solong->mlx, solong->win, image, x * 32, y * 32);
+	solong->image = mlx_xpm_file_to_image(solong->mlx, name, &i, &j);
+	mlx_put_image_to_window(solong->mlx, solong->win, solong->image, x * 32, y * 32);
 }
 
 int	ft_fill_map(t_sl *solong)
@@ -28,6 +27,7 @@ int	ft_fill_map(t_sl *solong)
 	size_t j;
 
 	i = 0;
+	mlx_clear_window(solong->mlx, solong->win);
 	while (i < solong->hight)
 	{
 		j = 0;

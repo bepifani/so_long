@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:31:57 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/13 15:48:22 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/13 18:28:05 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_sl {
     int     mony;
     int     steps;
     int     find_mony;
+	void	*image;
 }   t_sl;
 
 

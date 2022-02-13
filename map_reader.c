@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:21:38 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/13 16:04:33 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/13 18:35:05 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,14 @@ int ft_find_hight(char *argv)
     if (file < 0)
         write (1, "Error, wrong file\n", 18);
     line = get_next_line(file);
-    while (line)
+	free (line);
+	while (line)
     {
         line = get_next_line(file);
+		free (line);
         i++;
     }
+	free(line);
     close (file);
     return (i);
 }
@@ -99,7 +102,7 @@ int ft_check_walls(t_sl * sl)
 	}
 	i = sl->hight - 1;
 	j = 0;
-	while (j < ft_strlen(sl->map[i]) - 1)
+	while (j < ft_strlen(sl->map[i]))
 	{
 		if (sl->map[i][j] != '1')
 			return (0);
@@ -170,5 +173,6 @@ void    ft_make_map(t_sl *solong, char *argv)
         i++;
     }
     close (file);
+	
     ft_find_positions(solong);
 }
