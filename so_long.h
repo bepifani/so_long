@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:31:57 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/13 18:28:05 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/14 19:51:36 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,27 +35,26 @@
 # define D 2
 
 typedef struct s_sl {
-    char    **map;
-    void    *mlx;
-    int     hight;
-    int     length;
-    int     x;
-    int     y;
-    void     *win;
-    int     lose;
+	char	**map;
+	void	*mlx;
+	int		hight;
+	int		length;
+	int		x;
+	int		y;
+	void	*win;
+	int		lose;
 	int		win_game;
-    int     mony;
-    int     steps;
-    int     find_mony;
+	int		mony;
+	int		steps;
+	int		find_mony;
 	void	*image;
-}   t_sl;
-
+}	t_sl;
 
 char	*ft_anim_player(t_sl *sl);
 
-int     ft_find_hight(char *argv);
-void    ft_make_map(t_sl *solong, char *argv);
-void    ft_find_positions(t_sl  *solong);
+int		ft_find_hight(char *argv);
+void	ft_make_map(t_sl *solong, char *argv);
+void	ft_find_positions(t_sl *sl);
 
 void	ft_image_to_map(t_sl *solong, int x, int y, char *name);
 int		ft_fill_map(t_sl *solong);
@@ -66,7 +65,11 @@ void	ft_player_move(t_sl *sl, int i, int j);
 int		ft_end(t_sl *sl);
 
 int		ft_check_map(t_sl *sl);
-int	ft_check_p_e(t_sl *sl);
-int ft_check_walls(t_sl * sl);
+int		ft_check_p_e(t_sl *sl);
+int		ft_check_walls(t_sl *sl);
+void	ft_helper_player_move(t_sl *sl, int i, int j);
+int		ft_helper_check_walls(t_sl *sl, int i, size_t j);
+int		ft_helper_check_map(t_sl *sl);
+void	ft_helper_fill_map(t_sl *solong, int i, size_t j);
 
 #endif

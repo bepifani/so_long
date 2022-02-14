@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 14:27:28 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/13 18:31:29 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/14 19:29:24 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,17 @@ void	ft_get_mony(t_sl *sl, int i, int j)
 	sl->map[i][j] = '0';
 	sl->find_mony++;
 	ft_image_to_map(sl, sl->x * 32, sl->y * 32, GRASS);
+}
+
+void	ft_helper_player_move(t_sl *sl, int i, int j)
+{
+	if (sl->map[i + sl->x][j + sl->y] == '0')
+	{
+		sl->map[i + sl->x][j + sl->y] = 'P';
+		sl->map[sl->x][sl->y] = '0';
+	}
+	sl->x = sl->x + i;
+	sl->y = sl->y + j;
 }
 
 void	ft_player_move(t_sl *sl, int i, int j)
@@ -40,19 +51,14 @@ void	ft_player_move(t_sl *sl, int i, int j)
 		else
 			return ;
 	}
-	if (sl->map[i + sl->x][j + sl->y] == '0')
-	{
-		sl->map[i + sl->x][j + sl->y] = 'P';
-		sl->map[sl->x][sl->y] = '0';
-	}
-	sl->x = sl->x + i;
-	sl->y = sl->y + j;
+	ft_helper_player_move(sl, i, j);
 }
 
 int	ft_end(t_sl *sl)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	if (sl->lose == 1)
 		write(1, "============= Game over;( =============\n", 41);
 	if (sl->win_game == 1)
@@ -63,9 +69,6 @@ int	ft_end(t_sl *sl)
 		sl->map[i] = NULL;
 		i++;
 	}
-	// free(sl->map);
-	// free(sl->mlx);
-	// free(sl->win);
 	exit (EXIT_SUCCESS);
 }
 
