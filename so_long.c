@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:55:52 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/13 18:28:34 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:32:34 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,12 @@ int main(int argc, char **argv)
 	solong.win_game = 0;
 	solong.lose = 0;
     if (argc == 2)
-    {
         ft_make_map(&solong, argv[1]);
-    }
     else
-        write (1, "Error\n", 6);
+	{
+        write (1, "Error, wrong arguments\n", 23);
+		return (0);
+	}
 	if (ft_check_map(&solong) == 0)
 	{
 		write (1, "Error, not valid map\n", 21);

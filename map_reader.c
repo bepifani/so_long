@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 16:21:38 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/13 18:35:05 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:30:47 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ int ft_find_hight(char *argv)
     i = 0;
     file = open(argv, O_RDONLY);
     if (file < 0)
+	{
         write (1, "Error, wrong file\n", 18);
+		exit(0);
+	}
     line = get_next_line(file);
 	free (line);
 	while (line)
@@ -166,7 +169,10 @@ void    ft_make_map(t_sl *solong, char *argv)
     solong->map[solong->hight] = NULL;
     file = open(argv, O_RDONLY);
     if (!file)
+	{
         write(1, "Error, wrong file\n", 18);
+		exit(0);
+	}
     while (i < solong->hight)
     {
         solong->map[i] = get_next_line(file);
