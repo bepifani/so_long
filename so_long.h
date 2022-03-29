@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 17:31:57 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/14 19:51:36 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/17 17:59:35 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,8 @@ void	ft_helper_player_move(t_sl *sl, int i, int j);
 int		ft_helper_check_walls(t_sl *sl, int i, size_t j);
 int		ft_helper_check_map(t_sl *sl);
 void	ft_helper_fill_map(t_sl *solong, int i, size_t j);
+int		ft_exit(void);
+void	ft_helper_coin(t_sl *sl);
+void	ft_helper_coin2(t_sl *sl);
 
 #endif

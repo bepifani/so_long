@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 14:27:28 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/15 19:12:38 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:00:18 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,9 @@ void	ft_player_move(t_sl *sl, int i, int j)
 {
 	if (sl->map[i + sl->x][j + sl->y] == '1')
 	{
-		ft_putnbr_fd(sl->steps, 0);
-		write (1, "\n", 1);
+		ft_helper_coin2(sl);
 		return ;
 	}
-	// else
-	// {
-	// 	ft_putnbr_fd(sl->steps, 0);
-	// 	write (1, "\n", 1);
-	// 	sl->steps++;
-	// }
 	if (sl->map[i + sl->x][j + sl->y] == 'C')
 		ft_get_mony(sl, sl->x + i, sl->y + j);
 	else if (sl->map[i + sl->x][j + sl->y] == 'W')
@@ -59,18 +52,10 @@ void	ft_player_move(t_sl *sl, int i, int j)
 			ft_end(sl);
 		}
 		else
-		{
-			ft_putnbr_fd(sl->steps, 0);
-			write (1, "\n", 1);
-			return ;
-		}
+			ft_helper_coin2(sl);
 	}
 	if (sl->map[i + sl->x][j + sl->y] != '1')
-	{
-		sl->steps++;
-		ft_putnbr_fd(sl->steps, 0);
-		write (1, "\n", 1);
-	}
+		ft_helper_coin(sl);
 	ft_helper_player_move(sl, i, j);
 }
 

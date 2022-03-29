@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:52:12 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/14 19:53:42 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/17 17:59:46 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,16 @@ int	ft_find_hight(char *argv)
 	free(line);
 	close (file);
 	return (i);
+}
+
+int	ft_exit(void)
+{
+	exit (0);
+	return (0);
+}
+
+void	ft_helper_coin2(t_sl *sl)
+{
+	ft_putnbr_fd(sl->steps, 0);
+	write (1, "\n", 1);
 }

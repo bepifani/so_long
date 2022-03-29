@@ -6,7 +6,7 @@
 /*   By: bepifani <bepifani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 20:38:47 by bepifani          #+#    #+#             */
-/*   Updated: 2022/02/12 19:21:40 by bepifani         ###   ########.fr       */
+/*   Updated: 2022/02/21 18:41:26 by bepifani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,9 +122,5 @@ char	*get_next_line(int fd)
 		return (NULL);
 	buf1 = ft_one_str_to_n(buf2);
 	buf2 = ft_end_str_from_buff(buf2);
-	// if (buf1)
-	// 	write(1, buf1, ft_strlen(buf1));
-	// write(1, "\n", 1);
-	// write(1, "\n", 1);
 	return (buf1);
 }
