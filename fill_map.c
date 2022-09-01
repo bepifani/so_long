@@ -42,7 +42,7 @@ void	ft_helper_fill_map(t_sl *solong, int i, size_t j)
 			ft_image_to_map(solong, j, i, DONAT);
 		else if (solong->map[i][j] == 'E')
 			ft_image_to_map(solong, j, i, EXIT1);
-			j++;
+		j++;
 	}
 }
 

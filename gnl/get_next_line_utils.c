@@ -82,7 +82,7 @@ void	ft_bzero(void *s, size_t n)
 		n--;
 		str++;
 	}
-	return (*s);
+	//return (s);
 }
 
 void	ft_freestr(char *str)
