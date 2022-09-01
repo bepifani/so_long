@@ -1,5 +1,7 @@
 # So long
 ___
+Console game implemented using the mlx library.
+
 Start:
 ~~~
 ./so_long test.ber
