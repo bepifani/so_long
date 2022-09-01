@@ -4,4 +4,4 @@ Start:
 ~~~
 ./so_long test.ber
 ~~~
-![](https://disk.yandex.ru/i/Ltq0ollazWx5DQ)
+![](https://github.com/bepifani/so_long/blob/master/2022-09-01%2014-39-03.jpeg)
